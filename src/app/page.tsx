@@ -13,30 +13,9 @@ export default function Home() {
           <span className="font-bold">DataCoin</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Features
-          </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            How It Works
-          </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Rewards
-          </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Login
-          </Link>
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#" > How It Works </Link>
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#" > Rewards </Link>
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="/login" > Login </Link>
         </nav>
       </header>
       <main className="flex-1">
