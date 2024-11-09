@@ -17,19 +17,43 @@ datasource db {
 model Uploader {
     id      String @id @default(uuid())
     address String @unique
-}
-
-model Worker {
-    id      String @id @default(uuid())
-    address String @unique
+    tasks   Task[]
 }
 
 model Task {
-    id    Int    @id @default(autoincrement())
-    title String
+    id         Int          @id @default(autoincrement())
+    title      String       @default("Select the most suitable thumbnail")
+    Options    Option[]
+    uploaderId String?
+    Uploader   Uploader?    @relation(fields: [uploaderId], references: [id])
+    Submission Submission[]
 }
 
-model Options {
+model Option {
+    id         Int          @id @default(autoincrement())
+    image_url  String
+    option_id  Int
+    task_id    Int
+    task       Task         @relation(fields: [task_id], references: [id])
+    Submission Submission[]
+}
+
+model Worker {
+    id             String       @id @default(uuid())
+    address        String       @unique
+    Submission     Submission[]
+    pending_amount Int
+    locked_amount  Int
+}
+
+// NOTE: amount in submission is the amount that needs to be payed on each submission
+model Submission {
     id        Int    @id @default(autoincrement())
-    image_url String?
+    worker_id String
+    worker    Worker @relation(fields: [worker_id], references: [id])
+    option_id Int
+    option    Option @relation(fields: [option_id], references: [id])
+    task_id   Int
+    task      Task   @relation(fields: [task_id], references: [id])
+    amount    String
 }
