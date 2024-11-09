@@ -36,6 +36,6 @@ export async function POST(res: NextRequest) {
       process.env.JWT_SECRET!,
     );
 
-    return token;
+    return NextResponse.json({ token: token }, { status: 200 });
   }
 }

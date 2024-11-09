@@ -15,7 +15,7 @@ export default function Home() {
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="#" > How It Works </Link>
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="#" > Rewards </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="/login" > Login </Link>
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#" > Connect Wallet </Link>
         </nav>
       </header>
       <main className="flex-1">
@@ -62,8 +62,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p>
-                    Contribute to cutting-edge AI model training and
-                    development.
+                    Contribute to cutting-edge AI model training and development.
                   </p>
                 </CardContent>
               </Card>
