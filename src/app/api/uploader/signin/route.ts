@@ -4,7 +4,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prismaClient = new PrismaClient();
 
-export async function POST(res: NextRequest) {
+export async function POST(req: NextRequest) {
   // HACK: remove this sh*t later just for testing
   const handcodedAddress = "4JQMXHJpWpMXQihmgez8bScVeeDkHnnJM21TkBZjAhpp";
   const existingUser = await prismaClient.uploader.findFirst({
